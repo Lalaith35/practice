@@ -1,0 +1,195 @@
+﻿<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Котокафе Murchim</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="/static/assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="/static/assets/css/main.css">
+		<!--[if lte IE 9]><link rel="stylesheet" href="/static/assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="/static/assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
+					<nav>
+						<ul>
+							<li><a href="#intro">Добро пожаловать</a></li>
+							<li><a href="#one">О нас</a></li>
+							<li><a href="#two">Наши кошки</a></li>
+							<li><a href="#three">Контакты</a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Intro -->
+					<section id="intro" class="wrapper style1 fullscreen fade-up">
+                        
+						<div class="inner">
+							<h1>Котокафе Murchim</h1>
+							<p> </p>	
+						</div>
+					</section>
+
+				<!-- One -->
+					<section id="one" class="wrapper style2 spotlights">
+						<section>
+							<div class="image"><img src="/static/images/pic07.jpg" alt="" data-position="center center" /></div>
+							<div class="content">
+								<div class="inner">
+									<h2>Котокафе «Murchim»</h2>
+									<p>- это пространство, в котором можно окунуться в атмосферу размеренности кошачьей жизни.
+                                         У нас в гостях можно отдохнуть и поработать, поиграть в настольные игры с друзьями, выпить кофе и почитать
+                                         книгу или просто поиграть с котиками – все это и много другое ждет вас в «Murchim»!</p>
+									
+								</div>
+							</div>
+						</section>
+						<section>
+							<div class="image"><img src="/static/images/pic08.jpg" alt="" data-position="top center" /></div>
+							<div class="content">
+								<div class="inner">
+									<h2>Чем у нас заняться</h2>
+									<p>В течение семи дней в неделю на протяжении всего года, мы стараемся, 
+                                       чтобы приходить к нам было не только приятно, но и полезно, поэтому 
+                                       мы проводим для вас:<br>
+                                                - Семинары на абсолютно разные темы<br />
+                                                - Мастер-классы<br />
+                                                - Кинопоказы<br />
+                                                - Лекции ( о путешествиях, ветеринарии, экологии и т.д.)<br />
+                                                и многое другое <br />
+
+                                                Мы всегда открыты любым вашим идеям и предложениям!:)</p>
+									
+								</div>
+							</div>
+						</section>
+						
+					</section>
+
+				<!-- Two -->
+					<section id="two" class="wrapper style3 fade-up">
+						<div class="inner">
+							<h2>Наши питомцы поднимут вам настроение</h2>
+							<p></p>
+							<div class="features">
+                                {% for kitten in cat %}
+                                    <section>
+                                        <div class="image"><img src="{{kitten.image.url}}" alt="" data-position="top center" /></div>
+                                        <!--<a href="#" class="image"><img src="/static/images/pic08.jpg" alt="" data-position="top center" /></a>-->
+                                        <span class="icon major fa-diamond"></span>
+                                        
+                                            <h3>{{kitten.name}}</h3>
+                                                <p>
+                                                    <!--{% if kittens.image %}-->
+                                                    
+                                         
+                                                    <!--{% endif %}-->
+                                                   Порода: {{kitten.breed}} <br>
+                                                   Пол: {% if kitten.male %} Мужской {% else %} Женский {% endif %}<br>
+                                                   Возраст: {{kitten.date_of_bright|timesince}}
+            
+                                                </p>                
+                                        <ul class="actions">
+                                            <li><a href="/delete/{{kitten.id}}" class="button">Забрать к себе</a></li>
+                                        </ul>
+                    
+                                    </section>
+                                {% empty %}
+                                Сейчас все наши кошечки обрели свой дом. Но скоро прибудут новые питомцы, чтобы радовать вас
+                                {% endfor %}
+							</div>
+							
+						</div>
+					</section>
+
+				<!-- Three -->
+					<section id="three" class="wrapper style1 fade-up">
+						<div class="inner">
+							<h2>Наши контакты</h2>
+							<p>Вы можете связаться с администрацией котокафе по любому вопросу</p>
+							<div class="split style1">
+								<section>
+									<form method="post" action="#">
+										<div class="field half first">
+											<label for="name">Имя</label>
+											<input type="text" name="name" id="name" />
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="text" name="email" id="email" />
+										</div>
+										<div class="field">
+											<label for="message">Сообщение</label>
+											<textarea name="message" id="message" rows="5"></textarea>
+										</div>
+										<ul class="actions">
+											<li><a href="" class="button submit">Отправить</a></li>
+										</ul>
+									</form>
+								</section>
+								<section>
+									<ul class="contact">
+										<li>
+											<h3>Адрес</h3>
+											<span>УЛ.КОММУНИСТИЧЕСКАЯ,45<br />
+                                                    Г.НОВОСИБИРСК<br />
+											</span>
+										</li>
+										<li>
+											<h3>Email</h3>
+											<a href="#">user@untitled.tld</a>
+										</li>
+										<li>
+											<h3>Телефон</h3>
+											<span>213 13 48</span>
+										</li>
+										<li>
+											<h3>Мы в социальных сетях</h3>
+											<ul class="icons">
+												<li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
+												<li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
+												<li><a href="#" class="fa-github"><span class="label">GitHub</span></a></li>
+												<li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
+												<li><a href="#" class="fa-linkedin"><span class="label">LinkedIn</span></a></li>
+											</ul>
+										</li>
+									</ul>
+								</section>
+							</div>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper style1-alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="/static/assets/js/jquery.min.js"></script>
+			<script src="/static/assets/js/jquery.scrollex.min.js"></script>
+			<script src="/static/assets/js/jquery.scrolly.min.js"></script>
+			<script src="/static/assets/js/skel.min.js"></script>
+			<script src="/static/assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="/static/assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="/static/assets/js/main.js"></script>
+
+	</body>
+</html>
