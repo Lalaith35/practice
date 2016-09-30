@@ -1,4 +1,4 @@
-#Создать скрипт-скрэппер для получения свежих цитат из топа бездны
+#create script-scraperfor fresh quotes from top of the abyss
 #bash.im
 
 # -*- coding: cp1251 -*-
@@ -18,9 +18,7 @@ abysstop_date_list = abysstop_date.readlines()
 
 
 for texts in quotes:
-#try нужен потому что админы башорга оформл€ют рекламу в класс цитаты
-#но такие цитаты нам не нужны, так что если у цитаты нет нужного класса,
-#мы еЄ пропускаем
+
         try:
             t = texts.find(class_ = "abysstop-date")
             t = (t.text+"\n")
